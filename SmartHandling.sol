@@ -1,3 +1,7 @@
+pragma solidity ^0.8.0;
+
+contract Calculation { uint256 public result;
+
 function calculate(uint256 x, uint256 y, uint _num) public {
     assert(_num > 0);
     assert(_num != 100);
@@ -32,4 +36,4 @@ function calculateWithRequireAndRevert(uint256 x, uint256 y, uint _num) public {
     }
     result = result - y;
 }
-
+}
