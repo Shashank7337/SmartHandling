@@ -1,14 +1,14 @@
-Smart Handling
+# Smart Handling
 
 This Solidity program is a simple contract that showcases the usage of assert() and require() statements in Solidity. The contract performs calculations on input values and demonstrates how these statements can be used for error handling and condition validation.
 
-Description
+## Description
 
 The Calculation contract allows users to perform calculations by calling the calculate() and calculateWithRevert() functions. These functions perform division, subtraction, and utilize assert() and require() statements for error handling and condition validation.
 
+## Getting Started
 
-
-Executing Program
+## Executing Program
 
 To run this program, you can follow the steps below:
 
@@ -67,10 +67,10 @@ calculateWithRevert(uint256 x, uint256 y, uint _num): Perform calculations on x 
 You can test the contract by providing input values and observing the results of the calculations. 
 
 
-#Authors
+## Authors
 
 Shashank Shekhar
 
-License
+## License
 
 This project is licensed under the MIT License - see the LICENSE.txt file for details.
