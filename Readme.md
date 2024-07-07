@@ -16,6 +16,12 @@ Open the Remix Ethereum IDE website at Remix Ethereum IDE.
 Create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., ABC.sol).
 Copy and paste the provided code into the file:
 
+pragma solidity ^0.8.0;
+
+contract Calculation { uint256 public result;
+
+ 
+Copy
 function calculate(uint256 x, uint256 y, uint _num) public {
     assert(_num > 0);
     assert(_num != 100);
@@ -50,7 +56,7 @@ function calculateWithRequireAndRevert(uint256 x, uint256 y, uint _num) public {
     }
     result = result - y;
 }
-
+}
 
 Click on the "ABC.sol" button to compile the code.
 After successful compilation, navigate to the "Deploy & Run Transactions" tab.
