@@ -16,34 +16,41 @@ Open the Remix Ethereum IDE website at Remix Ethereum IDE.
 Create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., ABC.sol).
 Copy and paste the provided code into the file:
 
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+function calculate(uint256 x, uint256 y, uint _num) public {
+    assert(_num > 0);
+    assert(_num != 100);
 
-contract Calculation {
-    uint256 public result;
+    assert(y != 0);
+    result = x / y;
 
-    function calculate(uint256 x, uint256 y, uint _num) public {
-        assert(_num > 0);
-        assert(_num != 100);
-
-        assert(y != 0);
-        result = x / y;
-
-        assert(x >= y);
-        result = result - y;
-    }
-
-    function calculateWithRevert(uint256 x, uint256 y, uint _num) public {
-        require(_num > 0, "Number must be greater than 0");
-        require(_num != 100, "Number cannot be 100");
-
-        require(y != 0, "Division by zero is not allowed");
-        result = x / y;
-        
-        require(x >= y, "Subtraction would result in underflow");
-        result = result - y;
-    }
+    assert(x >= y);
+    result = result - y;
 }
+
+function calculateWithRevert(uint256 x, uint256 y, uint _num) public {
+    require(_num > 0, "Number must be greater than 0");
+    require(_num != 100, "Number cannot be 100");
+
+    require(y != 0, "Division by zero is not allowed");
+    result = x / y;
+    
+    require(x >= y, "Subtraction would result in underflow");
+    result = result - y;
+}
+
+function calculateWithRequireAndRevert(uint256 x, uint256 y, uint _num) public {
+    require(_num > 0, "Number must be greater than 0");
+    require(_num != 100, "Number cannot be 100");
+
+    require(y != 0, "Division by zero is not allowed");
+    result = x / y;
+    
+    if (x < y) {
+        revert("Subtraction would result in underflow");
+    }
+    result = result - y;
+}
+
 
 Click on the "ABC.sol" button to compile the code.
 After successful compilation, navigate to the "Deploy & Run Transactions" tab.
